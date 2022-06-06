@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :subscription do
-    title { "MyString" }
-    price { 1.5 }
-    status { "" }
-    frequency { "" }
-    customer { nil }
-    tea { nil }
+    title { "Supbscription Name" }
+    price { rand(5..20) }
+    status { [:active, :cancelled].sample }
+    frequency { [:weekly, :monthly, :quarterly, :yearly].sample }
+    customer
+    tea
   end
 end
