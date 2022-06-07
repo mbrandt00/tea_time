@@ -16,6 +16,7 @@ RSpec.describe 'Make a customer' do
     end
     it 'has a sad path if not all attributes are present' do 
         post '/api/v1/customers', params: {first_name: 'Michael'}
+        expect(response.status).to eq(400)
         parsed_response = JSON.parse(response.body, symbolize_names: true)
         expect(parsed_response[:error]).to eq(["Last name can't be blank", "Address can't be blank", "Email can't be blank"])
     end
