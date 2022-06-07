@@ -17,4 +17,9 @@ RSpec.describe 'Create teas' do
         expect(parsed_response[:data][:attributes][:temperature]).to eq(90)
         expect(parsed_response[:data][:attributes][:brew_time]).to eq(60)
     end
+    it 'will have a sad path' do 
+        post '/api/v1/teas', params: {brew_time: 60}
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+        expect(parsed_response[:errors]).to eq(["Title can't be blank"])
+    end
 end
