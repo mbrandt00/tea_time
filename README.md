@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an API that allows users to request to create/update/view teas, users, and subscriptions. 
 
-Things you may want to cover:
+## Endpoints 
 
-* Ruby version
+Postman was used to create API documentation of endpoints. Click this button for detailed endpoint information (Ensure that Postman is installed first). 
 
-* System dependencies
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/41440e22a9befbff4aa8?action=collection%2Fimport)
 
-* Configuration
+To verify the examples in this documentation, follow the setup instructions below. 
 
-* Database creation
+## Setup
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Clone down this repo and ensure that you have Ruby 2.7.4 installed on your computer. 
+CD into this directory and run `bundle install`. This will make sure all of the dependencies are installed. 
+Next run, `rails db:{create,migrate}` . This will create and run the migrations on our database. 
