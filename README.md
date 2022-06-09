@@ -2,6 +2,10 @@
 
 This is an API that allows users to request to create/update/view teas, users, and subscriptions. 
 
+## Schema
+
+![Tea Time Schema](https://user-images.githubusercontent.com/91398645/172953899-c8dd98e0-1729-4d99-aa31-7e9784f8df41.png)
+
 ## Endpoints 
 
 Postman was used to create API documentation of endpoints. Click this button for detailed endpoint information (Ensure that Postman is installed first). 
