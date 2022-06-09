@@ -20,6 +20,6 @@ RSpec.describe 'Create teas' do
     it 'will have a sad path' do 
         post '/api/v1/teas', params: {brew_time: 60}
         parsed_response = JSON.parse(response.body, symbolize_names: true)
-        expect(parsed_response[:errors]).to eq(["Title can't be blank"])
+        expect(parsed_response[:errors]).to eq(["Title can't be blank", "Description can't be blank", "Temperature can't be blank"])
     end
 end

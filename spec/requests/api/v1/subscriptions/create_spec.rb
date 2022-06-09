@@ -7,12 +7,11 @@ RSpec.describe 'create subscriptions' do
         post '/api/v1/subscriptions', params: {tea_id: tea_1.id, customer_id: customer_1.id, title: 'new tea trial', frequency: :weekly, status: :active, price: 50.0}
         parsed_response = JSON.parse(response.body, symbolize_names: true)
         expect(parsed_response[:data]).to include(:id, :type, :attributes)
-        expect(parsed_response[:data][:attributes]).to include(:title, :price, :status, :frequency, :tea, :customer)
+        expect(parsed_response[:data][:attributes]).to include(:title, :price, :status, :frequency, :tea)
         expect(parsed_response[:data][:attributes][:title]).to eq('new tea trial')
         expect(parsed_response[:data][:attributes][:frequency]).to eq('weekly')
         expect(parsed_response[:data][:attributes][:price]).to eq(50.0)
         expect(parsed_response[:data][:attributes][:tea][:title]).to eq(tea_1.title)
-        expect(parsed_response[:data][:attributes][:customer][:first_name]).to eq(customer_1.first_name)
     end
     describe 'sad path' do 
         it 'errors if no customer' do 
